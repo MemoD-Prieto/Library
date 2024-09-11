@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import {
-    BrowserRouter as Router,
     Routes,
     Route,
     Link,
     useLocation,
     useNavigate,
 } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import {
     AiOutlineBook,
     AiOutlineUpload,

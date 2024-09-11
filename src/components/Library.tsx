@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Card component
 interface CardProps {
@@ -16,9 +17,17 @@ const Card: React.FC<CardProps> = ({
 }) => {
     const fallbackImage =
         "https://via.placeholder.com/150?text=No+Image+Available";
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate(file); // Navega a la ruta del archivo al hacer clic en la tarjeta
+    };
 
     return (
-        <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-xs mx-auto">
+        <div
+            className="bg-white p-4 rounded-lg shadow-md w-full max-w-xs mx-auto cursor-pointer"
+            onClick={handleCardClick} // Redirigir al hacer clic en la tarjeta
+        >
             <h2 className="text-xl font-semibold text-center mb-4">{title}</h2>
             <div className="relative group h-64">
                 <img
@@ -32,16 +41,6 @@ const Card: React.FC<CardProps> = ({
                 <div className="absolute inset-0 bg-gray-800 bg-opacity-90 text-white p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md">
                     <p className="text-center text-sm">{description}</p>
                 </div>
-            </div>
-            <div className="text-center mt-4">
-                <a
-                    href={file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-                >
-                    Leer PDF
-                </a>
             </div>
         </div>
     );

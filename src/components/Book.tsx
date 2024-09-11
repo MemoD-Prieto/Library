@@ -16,7 +16,9 @@ const Library: React.FC = () => {
     useEffect(() => {
         const loadJson = async () => {
             try {
-                const response = await fetch(`/${bookname}.json`);
+                const response = await fetch(
+                    `${process.env.PUBLIC_URL}/${bookname}.json`
+                );
                 const jsonData = await response.json();
                 setTextPages(jsonData.pages);
                 setLoading(false);
