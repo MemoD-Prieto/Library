@@ -1,7 +1,7 @@
 {
     "name": "my-app",
     "version": "0.1.0",
-    "homepage": "https://username.github.io/Library",
+    "homepage": "https://MemoD-Prieto.github.io/Library",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
